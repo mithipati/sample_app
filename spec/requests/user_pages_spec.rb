@@ -50,7 +50,10 @@ describe "UserPages" do
       end
 
       describe "followed by signout" do
-        before { click_link "Sign out" }
+        before do
+          click_button submit
+          click_link "Sign out"
+        end
         it { should have_link('Sign in') }
       end
     end
